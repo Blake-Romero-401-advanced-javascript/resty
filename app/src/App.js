@@ -7,24 +7,17 @@ function App() {
     <div className='App'>
       <Header />
       <Form />
+      {/* <Results /> */}
     </div>
   )
 }
-
-// function Header() {
-//   return (
-//     <header className='App-header'>
-//     <h1>React to Words</h1>
-//     </header>);
-// }
 
 class Form extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      otherStuff: 'maybe someday',
-      words:'nothing to see here',
+      words:'Enter URL',
     }
   }
 
@@ -46,14 +39,32 @@ class Form extends React.Component {
 
   render() {
     return (
-      <div>
+      <form>
         <h3>{this.state.words}</h3>
-        <input onChange={this.handleWord} />
-        <button onClick={this.handleClick}>Click Here</button>
-      </div>
+        <input type="text" onChange={this.handleWord} />
+        <option type="radio">Get</option>
+        <div role="group">
+          {/* <label>GET</label> */}
+          <input type="button" value="GET" checked="checked" onClick={this.handleClick} />
+          {/* <label>DELETE</label> */}
+          <input type="button" value="DELETE" onClick={this.handleClick} />
+          {/* <label>PUT</label> */}
+          <input type="button" value="PUT" onClick={this.handleClick} />
+          {/* <label>POST</label> */}
+          <input type="button" value="POST" onClick={this.handleClick} />
+        </div>
+        {/* <button onClick={this.handleClick}>GET</button>
+        <button onClick={this.handleClick}>DELETE</button>
+        <button onClick={this.handleClick}>PUT</button>
+        <button onClick={this.handleClick}>POST</button> */}
+
+
+      </form>
     );
   }
 }
+
+
 
 export default App;
 
