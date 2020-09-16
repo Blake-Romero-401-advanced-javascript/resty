@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Header from './components/Header';
 
 function App() {
   return (
@@ -10,19 +11,20 @@ function App() {
   )
 }
 
-function Header() {
-  return (
-    <header className='App-header'>
-    <h1>React to Words</h1>
-    </header>);
-}
+// function Header() {
+//   return (
+//     <header className='App-header'>
+//     <h1>React to Words</h1>
+//     </header>);
+// }
 
-class Form extends React.Component() {
+class Form extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      words:'nothing to see here';
+      otherStuff: 'maybe someday',
+      words:'nothing to see here',
     }
   }
 
@@ -33,8 +35,8 @@ class Form extends React.Component() {
 
   handleClick = event => {
     event.preventDefault();
-    let words = this.state.words;
-      .split('');
+    let words = this.state.words
+      .split('')
       .reverse()
       .join('');
 
@@ -45,9 +47,11 @@ class Form extends React.Component() {
   render() {
     return (
       <div>
-        <h3>this.state.words</h3>
+        <h3>{this.state.words}</h3>
+        <input onChange={this.handleWord} />
+        <button onClick={this.handleClick}>Click Here</button>
       </div>
-      )
+    );
   }
 }
 
