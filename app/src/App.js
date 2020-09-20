@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <Header />
-        <Form handler={this.handleForm}/>
+        <Form prompt="Search" handler={this.handleForm}/>
         <Results count={this.state.count} results={this.state.results} headers={this.state.headers}/>
         <Footer />
       </div>
